@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_home_work9/models/hotel_info.dart';
-import 'package:flutter_home_work9/models/routes_class.dart';
+import 'package:flutter_home_work9/models/scree_arguments.dart';
 import 'package:flutter_home_work9/views/fetch_data.dart';
 import 'package:flutter_home_work9/views/info_widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -8,7 +8,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class DetailsPage extends StatelessWidget {
   static const String route = '/details';
   final ScreenArgumentss arguments;
-  DetailsPage(this.arguments);
+  const DetailsPage(this.arguments, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +44,7 @@ class DetailsPage extends StatelessWidget {
                                           child: Image.asset(
                                               'assets/images/$item',
                                               fit: BoxFit.cover,
+                                              height: 300,
                                               width: 300)),
                                     ]))
                                 .toList(),
