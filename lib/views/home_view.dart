@@ -68,7 +68,7 @@ class _HomeViewState extends State<HomeView> {
                           child: Column(
                             children: [
                               Container(
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.orangeAccent,
                                 ),
                                 child: Image.asset(
