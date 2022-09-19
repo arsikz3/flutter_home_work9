@@ -80,7 +80,7 @@ Widget gridData(List<HotelPreview> elems) {
                     child: ElevatedButton(
                       child: const Text('Подробнее'),
                       style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                               borderRadius: //BorderRadius.circular(16),
                                   BorderRadius.only(
                                       bottomLeft: Radius.circular(16),
