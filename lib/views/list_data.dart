@@ -55,12 +55,12 @@ Widget gridData(List<HotelPreview> elems) {
                 color: Colors.white, borderRadius: BorderRadius.circular(16)),
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   height: 100,
                   child: ClipRRect(
                     borderRadius:
-                        BorderRadius.vertical(top: new Radius.circular(16.0)),
+                        const BorderRadius.vertical(top: Radius.circular(16.0)),
                     child: Image.asset(
                       'assets/images/${elems[index].poster}',
                       fit: BoxFit.cover,
