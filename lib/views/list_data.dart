@@ -54,29 +54,39 @@ Widget gridData(List<HotelPreview> elems) {
         itemBuilder: (BuildContext ctx, index) {
           return Container(
             alignment: Alignment.center,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(16)),
             child: Column(
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: SizedBox(
-                    //width: 150,
-                    height: 100,
+                  width: double.infinity,
+                  height: 100,
+                  child: ClipRRect(
+                    borderRadius:
+                        BorderRadius.vertical(top: new Radius.circular(16.0)),
+                    //borderRadius: BorderRadius.only(topLeft: BorderRadius.only(topLeft: Border)),  // circular(15),
                     child: Image.asset(
                       'assets/images/${elems[index].poster}',
                       fit: BoxFit.cover,
-                      cacheWidth:
-                          50 * MediaQuery.of(ctx).devicePixelRatio.round(),
+                      //cacheWidth:50 * MediaQuery.of(ctx).devicePixelRatio.round(),
                     ),
                   ),
                 ),
                 SizedBox(height: 40, child: Text(elems[index].name)),
-                Flexible(
-                  child: ElevatedButton(
-                    child: const Text('Подробнее'),
-                    onPressed: () {},
+                Expanded(
+                  child: SizedBox(
+                    width: double.infinity,
+                    //height: 10,
+                    child: ElevatedButton(
+                      child: const Text('Подробнее'),
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: //BorderRadius.circular(16),
+                                  BorderRadius.only(
+                                      bottomLeft: Radius.circular(16),
+                                      bottomRight: Radius.circular(16)))),
+                      onPressed: () {},
+                    ),
                   ),
                 ),
               ],
