@@ -72,14 +72,13 @@ Widget gridData(List<HotelPreview> elems) {
                   child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      child: const Text('Подробнее'),
                       style: ElevatedButton.styleFrom(
                           shape: const RoundedRectangleBorder(
-                              borderRadius: //BorderRadius.circular(16),
-                                  BorderRadius.only(
-                                      bottomLeft: Radius.circular(16),
-                                      bottomRight: Radius.circular(16)))),
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(16),
+                                  bottomRight: Radius.circular(16)))),
                       onPressed: () {},
+                      child: const Text('Подробнее'),
                     ),
                   ),
                 ),
