@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_home_work9/models/hotel_info.dart';
 
 Widget rowInfo(
   dynamic hotelInfo,
   String lable,
   String param,
 ) {
-  print(hotelInfo.toString());
   return Row(
     children: [
       Text(lable),

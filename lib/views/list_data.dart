@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_home_work9/models/hotel.dart';
-import 'package:flutter_home_work9/models/routes_class.dart';
-import 'package:flutter_home_work9/views/fetch_data.dart';
+import 'package:flutter_home_work9/models/scree_arguments.dart';
 
 Widget listData(elem) {
   return ListView.builder(
@@ -37,8 +36,6 @@ Widget listData(elem) {
                             arguments: ScreenArgumentss(
                                 elem![index].name, elem![index].uuid),
                           );
-
-                          //Navigator.pushNamed(context, '/detail');
                         },
                       ),
                     ],
