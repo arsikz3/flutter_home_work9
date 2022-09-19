@@ -47,7 +47,7 @@ Widget gridData(List<HotelPreview> elems) {
     child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
-            //childAspectRatio: 3 / 2,
+            childAspectRatio: 3 / 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10),
         itemCount: elems.length,
@@ -64,11 +64,9 @@ Widget gridData(List<HotelPreview> elems) {
                   child: ClipRRect(
                     borderRadius:
                         BorderRadius.vertical(top: new Radius.circular(16.0)),
-                    //borderRadius: BorderRadius.only(topLeft: BorderRadius.only(topLeft: Border)),  // circular(15),
                     child: Image.asset(
                       'assets/images/${elems[index].poster}',
                       fit: BoxFit.cover,
-                      //cacheWidth:50 * MediaQuery.of(ctx).devicePixelRatio.round(),
                     ),
                   ),
                 ),
@@ -76,7 +74,6 @@ Widget gridData(List<HotelPreview> elems) {
                 Expanded(
                   child: SizedBox(
                     width: double.infinity,
-                    //height: 10,
                     child: ElevatedButton(
                       child: const Text('Подробнее'),
                       style: ElevatedButton.styleFrom(
