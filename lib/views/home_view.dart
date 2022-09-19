@@ -64,38 +64,41 @@ class _HomeViewState extends State<HomeView> {
                   return ListView.builder(
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
+                          elevation: 10,
                           child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.orangeAccent,
-                            ),
-                            child: Image.asset(
-                              'assets/images/${elem![index].poster}',
-                              fit: BoxFit.cover,
-                              cacheWidth: 100 *
-                                  MediaQuery.of(context)
-                                      .devicePixelRatio
-                                      .round(),
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              SizedBox(
-                                  width: 180, child: Text(elem![index].name)),
-                              ButtonBar(
-                                children: <Widget>[
-                                  ElevatedButton(
-                                    child: const Text('Подробнее'),
-                                    onPressed: () {/* ... */},
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.orangeAccent,
+                                ),
+                                child: Image.asset(
+                                  'assets/images/${elem![index].poster}',
+                                  fit: BoxFit.cover,
+                                  cacheWidth: 100 *
+                                      MediaQuery.of(context)
+                                          .devicePixelRatio
+                                          .round(),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                      width: 180,
+                                      child: Text(elem![index].name)),
+                                  ButtonBar(
+                                    children: <Widget>[
+                                      ElevatedButton(
+                                        child: const Text('Подробнее'),
+                                        onPressed: () {/* ... */},
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
                             ],
-                          ),
-                        ],
-                      ));
+                          ));
                     },
                     // itemCount: myData == null ? 0 : myData.length,
                     itemCount: elem!.length,
