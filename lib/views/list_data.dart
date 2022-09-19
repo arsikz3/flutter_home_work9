@@ -46,10 +46,7 @@ Widget gridData(List<HotelPreview> elems) {
     padding: const EdgeInsets.all(8.0),
     child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            //childAspectRatio: 3 / 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10),
+            maxCrossAxisExtent: 200, crossAxisSpacing: 10, mainAxisSpacing: 10),
         itemCount: elems.length,
         itemBuilder: (BuildContext ctx, index) {
           return Container(
