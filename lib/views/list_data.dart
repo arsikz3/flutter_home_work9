@@ -62,7 +62,7 @@ Widget gridData(List<HotelPreview> elems) {
                       color: Colors.amber,
                       borderRadius: BorderRadius.circular(15)),
                   child: SizedBox(
-                    width: 150,
+                    //width: 150,
                     height: 100,
                     child: Image.asset(
                       'assets/images/${elems[index].poster}',
@@ -72,10 +72,12 @@ Widget gridData(List<HotelPreview> elems) {
                     ),
                   ),
                 ),
-                Text(elems[index].name),
-                ElevatedButton(
-                  child: const Text('Подробнее'),
-                  onPressed: () {},
+                SizedBox(height: 40, child: Text(elems[index].name)),
+                Flexible(
+                  child: ElevatedButton(
+                    child: const Text('Подробнее'),
+                    onPressed: () {},
+                  ),
                 ),
               ],
             ),
