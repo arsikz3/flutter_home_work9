@@ -30,7 +30,7 @@ Future<HotelInfo> getDatail(String uuid) async {
     'param1': 'one',
   };
   var url = Uri.https('run.mocky.io', '/v3/$uuid');
-  print(url);
+
   var response = await http.get(url);
 
   if (response.statusCode == 200) {
