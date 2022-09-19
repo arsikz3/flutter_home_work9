@@ -22,7 +22,7 @@ class DetailsPage extends StatelessWidget {
           initialData: 'Load Data',
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: const CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else if (snapshot.connectionState == ConnectionState.done) {
               if (snapshot.hasError) {
                 return const Text('Error');
@@ -36,27 +36,26 @@ class DetailsPage extends StatelessWidget {
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                              child: CarouselSlider(
+                          CarouselSlider(
                             options: CarouselOptions(),
                             items: elem.photos
-                                .map((item) => Container(
-                                      child: SizedBox(
+                                .map((item) => Row(children: [
+                                      SizedBox(
                                           child: Image.asset(
                                               'assets/images/$item',
                                               fit: BoxFit.cover,
-                                              width: 1000)),
-                                    ))
+                                              width: 300)),
+                                    ]))
                                 .toList(),
-                          )),
-                          SizedBox(
+                          ),
+                          const SizedBox(
                             height: 5,
                           ),
                           rowInfo(elem.address, 'Страна: ', 'country'),
                           rowInfo(elem.address, 'Город: ', 'city'),
                           rowInfo(elem.address, 'Улица: ', 'street'),
                           rowInfo(elem.rating, 'Рейтинг:', ''),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text('Сервисы',
@@ -64,7 +63,7 @@ class DetailsPage extends StatelessWidget {
                                   color: Colors.grey[800],
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18)),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           Row(
