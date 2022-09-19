@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_home_work9/models/hotel.dart';
+import 'package:flutter_home_work9/models/routes_class.dart';
+import 'package:flutter_home_work9/views/fetch_data.dart';
 
 Widget listData(elem) {
   return ListView.builder(
@@ -28,7 +30,16 @@ Widget listData(elem) {
                     children: <Widget>[
                       ElevatedButton(
                         child: const Text('Подробнее'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/details',
+                            arguments: ScreenArgumentss(
+                                elem![index].name, elem![index].uuid),
+                          );
+
+                          //Navigator.pushNamed(context, '/detail');
+                        },
                       ),
                     ],
                   ),
@@ -42,49 +53,60 @@ Widget listData(elem) {
 }
 
 Widget gridData(List<HotelPreview> elems) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200, crossAxisSpacing: 10, mainAxisSpacing: 10),
-        itemCount: elems.length,
-        itemBuilder: (BuildContext ctx, index) {
-          return Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(16)),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: 100,
-                  child: ClipRRect(
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(16.0)),
-                    child: Image.asset(
-                      'assets/images/${elems[index].poster}',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 40, child: Text(elems[index].name)),
-                Expanded(
-                  child: SizedBox(
+  return Builder(builder: (context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10),
+          itemCount: elems.length,
+          itemBuilder: (BuildContext ctx, index) {
+            return Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(16)),
+              child: Column(
+                children: [
+                  SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(16),
-                                  bottomRight: Radius.circular(16)))),
-                      onPressed: () {},
-                      child: const Text('Подробнее'),
+                    height: 100,
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                          top: Radius.circular(16.0)),
+                      child: Image.asset(
+                        'assets/images/${elems[index].poster}',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          );
-        }),
-  );
+                  SizedBox(height: 40, child: Text(elems[index].name)),
+                  Expanded(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(16),
+                                    bottomRight: Radius.circular(16)))),
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/details',
+                            arguments: ScreenArgumentss(
+                                elems[index].name, elems[index].uuid),
+                          );
+                        },
+                        child: const Text('Подробнее'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }),
+    );
+  });
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_home_work9/models/routes_class.dart';
+import 'package:flutter_home_work9/views/detail_view.dart';
 import 'package:flutter_home_work9/views/home_view.dart';
 
 void main() {
@@ -14,10 +16,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/',
+
+      initialRoute: HomeView.route,
       routes: {
-        '/': (BuildContext context) => HomeView(),
+        HomeView.route: (_) => HomeView(),
+        DetailsPage.route: (context) => DetailsPage(
+            ModalRoute.of(context)?.settings.arguments as ScreenArgumentss),
       },
+
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (BuildContext context) => HomeView(),
+      //   '/detail': ((context) => DetailPage(hotelinfo: hotelinfo)),
+      //   '/details': ((context) => ModalRoute.of(context).settings.arguments)).
+      // },
     );
   }
 }

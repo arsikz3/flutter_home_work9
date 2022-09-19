@@ -4,9 +4,11 @@ import 'package:flutter_home_work9/views/fetch_data.dart';
 import 'package:flutter_home_work9/views/list_data.dart';
 
 class HomeView extends StatefulWidget {
-  HomeView({Key? key}) : super(key: key);
+  static const String route = '/';
+  const HomeView({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeViewState createState() => _HomeViewState();
 }
 
@@ -15,7 +17,6 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     _hotelsPreview = getData();
