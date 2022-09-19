@@ -13,8 +13,6 @@ Future<List<HotelPreview>> getData() async {
   if (response.statusCode == 200) {
     List<dynamic> convertRes = convert.jsonDecode(response.body);
     for (var element in convertRes) {
-      //print(element);
-
       hotel = HotelPreview.fromJson(element);
       hotels.add(hotel);
     }
