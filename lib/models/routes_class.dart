@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 // void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       initialRoute: HomePage.route,
       routes: {
-        HomePage.route: (_) => HomePage(),
+        HomePage.route: (_) => const HomePage(),
         DetailPage.route: (context) => DetailPage(
             ModalRoute.of(context)?.settings.arguments as ScreenArgumentss),
       },
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   static const String route = '/';
+
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,7 @@ class HomePage extends StatelessWidget {
 class DetailPage extends StatelessWidget {
   static const String route = '/details';
   final ScreenArgumentss arguments;
-  DetailPage(this.arguments);
+  const DetailPage(this.arguments, {super.key});
 
   @override
   Widget build(BuildContext context) {
