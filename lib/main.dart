@@ -16,13 +16,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24fb7d0... почищено
       initialRoute: HomeView.route,
       routes: {
         HomeView.route: (_) => HomeView(),
         DetailsPage.route: (context) => DetailsPage(
             ModalRoute.of(context)?.settings.arguments as ScreenArgumentss),
       },
+<<<<<<< HEAD
 
       // initialRoute: '/',
       // routes: {
@@ -30,6 +34,8 @@ class MyApp extends StatelessWidget {
       //   '/detail': ((context) => DetailPage(hotelinfo: hotelinfo)),
       //   '/details': ((context) => ModalRoute.of(context).settings.arguments)).
       // },
+=======
+>>>>>>> 24fb7d0... почищено
     );
   }
 }

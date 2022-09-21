@@ -32,9 +32,12 @@ migrate_working_dir/
 .pub/
 /build/
 
+<<<<<<< HEAD
 # Web related
 lib/generated_plugin_registrant.dart
 
+=======
+>>>>>>> 24fb7d0... почищено
 # Symbolication related
 app.*.symbols
 
