@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_home_work9/models/hotel.dart';
 import 'package:flutter_home_work9/models/routes_class.dart';
-import 'package:flutter_home_work9/views/fetch_data.dart';
 
 Widget listData(elem) {
   return ListView.builder(

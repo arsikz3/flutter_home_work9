@@ -26,9 +26,7 @@ Future<List<HotelPreview>> getData() async {
 
 Future<HotelInfo> getDatail(String uuid) async {
   HotelInfo hotelIngo;
-  final queryParameters = {
-    'param1': 'one',
-  };
+
   var url = Uri.https('run.mocky.io', '/v3/$uuid');
 
   var response = await http.get(url);

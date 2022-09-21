@@ -8,7 +8,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class DetailsPage extends StatelessWidget {
   static const String route = '/details';
   final ScreenArgumentss arguments;
-  DetailsPage(this.arguments);
+  const DetailsPage(this.arguments, {super.key});
 
   @override
   Widget build(BuildContext context) {
