@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 >>>>>>> 24fb7d0... почищено
       initialRoute: HomeView.route,
       routes: {
-        HomeView.route: (_) => HomeView(),
+        HomeView.route: (_) => const HomeView(),
         DetailsPage.route: (context) => DetailsPage(
             ModalRoute.of(context)?.settings.arguments as ScreenArgumentss),
       },
