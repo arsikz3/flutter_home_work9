@@ -45,5 +45,10 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+<<<<<<< HEAD
+=======
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+>>>>>>> 24fb7d0... почищено
 </dict>
 </plist>
