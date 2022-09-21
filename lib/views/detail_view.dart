@@ -33,67 +33,84 @@ class DetailsPage extends StatelessWidget {
                     ? const Center(
                         child: Text('Контент врменно недоступен'),
                       )
-                    : Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CarouselSlider(
-                            options: CarouselOptions(),
-                            items: elem.photos
-                                .map((item) => Row(children: [
-                                      SizedBox(
-                                          child: Image.asset(
-                                              'assets/images/$item',
-                                              fit: BoxFit.cover,
-                                              width: 300)),
-                                    ]))
-                                .toList(),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          rowInfo(elem.address, 'Страна: ', 'country'),
-                          rowInfo(elem.address, 'Город: ', 'city'),
-                          rowInfo(elem.address, 'Улица: ', 'street'),
-                          rowInfo(elem.rating, 'Рейтинг:', ''),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Text('Сервисы',
-                              style: TextStyle(
-                                  color: Colors.grey[800],
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18)),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text('Платные',
-                                      style: TextStyle(
-                                          color: Colors.grey[800],
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16)),
-                                  getTextWidgets(elem.services['free']),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Text('Беcплатнo',
-                                      style: TextStyle(
-                                          color: Colors.grey[800],
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16)),
-                                  getTextWidgets(elem.services['paid']),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
+                    : Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CarouselSlider(
+                              options: CarouselOptions(),
+                              items: elem.photos
+                                  .map((item) => Row(children: [
+                                        SizedBox(
+                                            child: Image.asset(
+                                                'assets/images/$item',
+                                                fit: BoxFit.cover,
+                                                width: 300)),
+                                      ]))
+                                  .toList(),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            RowInfo(
+                                hotelInfo: elem.address,
+                                lable: 'Страна: ',
+                                param: 'country'),
+                            RowInfo(
+                                hotelInfo: elem.address,
+                                lable: 'Город: ',
+                                param: 'city'),
+                            RowInfo(
+                                hotelInfo: elem.address,
+                                lable: 'Улица: ',
+                                param: 'street'),
+                            RowInfo(
+                                hotelInfo: elem.rating,
+                                lable: 'Рейтинг: ',
+                                param: ''),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Text('Сервисы',
+                                style: TextStyle(
+                                    color: Colors.grey[800],
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18)),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text('Платные',
+                                        style: TextStyle(
+                                            color: Colors.grey[800],
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16)),
+                                    GetTExtWidgets(
+                                        strings: (elem.services['free']))
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text('Беcплатнo',
+                                        style: TextStyle(
+                                            color: Colors.grey[800],
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16)),
+                                    GetTExtWidgets(
+                                        strings: elem.services['paid']),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       );
               } else {
                 return const Text('Empty data');

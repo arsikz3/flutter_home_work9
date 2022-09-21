@@ -67,9 +67,9 @@ class _HomeViewState extends State<HomeView> {
                       valueListenable: isList,
                       builder: (_, value, child) {
                         if (value == true) {
-                          return listData(elem);
+                          return ListDataWidget(elem: elem);
                         } else {
-                          return gridData(elem);
+                          return GridDataWidget(elems: elem);
                         }
                       });
                 } else {
